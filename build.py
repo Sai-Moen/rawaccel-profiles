@@ -1,17 +1,19 @@
 from pathlib import Path
-import subprocess
 
-def main():
+import PyInstaller.__main__ as pyi
+
+def freeze():
     root = Path.cwd()
+    script = f"{root / "src" / "rawaccel_profiles.py"}"
     options = [
-        "-F",
+        "-y",
+        "--paths",    f"{root / "src"}",
+        "--add-data", f"{root / "data"}:data",
         "--distpath", f"{root / "dist"}",
         "--workpath", f"{root / "build"}",
         "--specpath", f"{root / "build"}",
-        "--add-data", f"{root / "data"}:res",
     ]
-    script = root / "src" / "rawaccel_profiles.py"
-    subprocess.run(f"pyinstaller {" ".join(options)} {script}").check_returncode()
+    pyi.run((script, *options))
 
 if __name__ == "__main__":
-    main()
+    freeze()
