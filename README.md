@@ -17,6 +17,18 @@ Where RawAccel represents your RawAccel installation folder.
 
 ## Usage
 
+### Note on Anti-Virus / Anti-Cheat
+
+Just like with RawAccel, your Anti-Virus may not take kindly to unkown executables,
+and this time it's much more likely to flag since this program is not signed.
+
+Likewise, for Anti-Cheat, this program is also much more likely to get blocked than RawAccel,
+as it's effectively an unsigned python program running in the background, which AC could find suspicious.
+If you fear getting banned for having it in the background, then I suggest quitting out before going in-game.
+With a shortcut to the program on the desktop, it should still be faster to use than manually applying profiles to `writer.exe`.
+
+### Running the program
+
 When the executable is run, you will get a small icon in the system tray, which is the RawAccel logo.
 Upon right-clicking it, you will see multiple options:
 
